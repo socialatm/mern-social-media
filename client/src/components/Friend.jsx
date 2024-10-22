@@ -20,8 +20,22 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const medium = palette.neutral.medium;
 
   const isFriend = friends.find((friend) => friend._id === friendId);
+  const isSelf = friendId === _id;
 
+  /**
+   * Handles adding or removing a friend for the current user.
+   * 
+   * If the current user tries to add themselves as a friend, a console message is logged and the function returns.
+   * Otherwise, it sends a PATCH request to the server to update the user's friends list, and dispatches an action to update the Redux store.
+   * 
+   * @returns {Promise<void>} - Resolves when the friend update is complete.
+   */
   const patchFriend = async () => {
+    if (_id === friendId) {
+      console.log("Cannot add yourself as a friend");
+      return;
+    }
+
     const response = await fetch(
       `http://localhost:3001/users/${_id}/${friendId}`,
       {
@@ -64,16 +78,18 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
           </Typography>
         </Box>
       </FlexBetween>
-      <IconButton
-        onClick={() => patchFriend()}
-        sx={{ backgroundColor: primaryLight, p: "0.6rem" }}
-      >
-        {isFriend ? (
-          <PersonRemoveOutlined sx={{ color: primaryDark }} />
-        ) : (
-          <PersonAddOutlined sx={{ color: primaryDark }} />
-        )}
-      </IconButton>
+      {!isSelf && (
+        <IconButton
+          onClick={() => patchFriend()}
+          sx={{ backgroundColor: primaryLight, p: "0.6rem" }}
+        >
+          {isFriend ? (
+            <PersonRemoveOutlined sx={{ color: primaryDark }} />
+          ) : (
+            <PersonAddOutlined sx={{ color: primaryDark }} />
+          )}
+        </IconButton>
+      )}
     </FlexBetween>
   );
 };
