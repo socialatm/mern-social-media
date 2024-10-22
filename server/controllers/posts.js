@@ -1,10 +1,14 @@
 import Post from "../models/Post.js";
 import User from "../models/User.js";
+import mongoose from "mongoose";
 
 /* CREATE */
 export const createPost = async (req, res) => {
   try {
     const { userId, description, picturePath } = req.body;
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(400).json({ message: "Invalid userId" });
+    }
     const user = await User.findById(userId);
     const newPost = new Post({
       userId,
