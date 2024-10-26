@@ -52,7 +52,6 @@ const PostWidget = ({
       body: JSON.stringify({ userId: loggedInUserId }),
     });
     const updatedPost = await response.json();
-    // console.log("like",updatedPost)
     dispatch(setPost({ post: updatedPost }));
   };
 
@@ -66,7 +65,6 @@ const PostWidget = ({
       body: JSON.stringify({userId:loggedInUserId, commentText:commentValue})
     })
     const updatedPost = await response.json();
-    // console.log("comm",updatedPost)
     dispatch(setPost({post:updatedPost}))
     setCommentValue('')
   }
