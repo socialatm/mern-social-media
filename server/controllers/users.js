@@ -1,6 +1,12 @@
 import User from "../models/User.js";
 
-/* READ */
+/**
+ * Retrieves all users from the database.
+ *
+ * @param {Object} req - The HTTP request object.
+ * @param {Object} res - The HTTP response object.
+ * @returns {Promise<void>} - A Promise that resolves when the response is sent.
+ */
 export const getUsers = async(req,res)=>{
   try {
     const users = await User.find();
@@ -10,6 +16,14 @@ export const getUsers = async(req,res)=>{
   }
 }
 
+/**
+ * Retrieves a user by their ID.
+ *
+ * @param {Object} req - The HTTP request object.
+ * @param {string} req.params.id - The ID of the user to retrieve.
+ * @param {Object} res - The HTTP response object.
+ * @returns {Promise<void>} - A Promise that resolves when the response is sent.
+ */
 export const getUser = async (req, res) => {
   try {
     const { id } = req.params;
@@ -39,7 +53,13 @@ export const getUserFriends = async (req, res) => {
   }
 };
 
-/* UPDATE */
+/**
+ * Adds or removes a friend from a user's friend list.
+ *
+ * @param {string} id - The ID of the user.
+ * @param {string} friendId - The ID of the friend to add or remove.
+ * @returns {Promise<Object[]>} - An array of the user's friends, formatted with selected properties.
+ */
 export const addRemoveFriend = async (req, res) => {
   try {
     const { id, friendId } = req.params;
