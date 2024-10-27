@@ -55,6 +55,17 @@ const PostWidget = ({
     dispatch(setPost({ post: updatedPost }));
   };
 
+
+  /**
+   * Adds a new comment to the post with the specified `postId`.
+   *
+   * @param {string} postId - The ID of the post to add the comment to.
+   * @param {string} token - The authentication token for the current user.
+   * @param {string} loggedInUserId - The ID of the currently logged-in user.
+   * @param {string} commentValue - The text of the comment to be added.
+   * @param {function} dispatch - The Redux dispatch function to update the post data.
+   * @returns {Promise<void>} - A Promise that resolves when the comment has been added.
+   */
   const AddComment = async()=>{
     const response = await fetch(`http://localhost:3001/posts/${postId}/comment`, {
       method:"PATCH",
