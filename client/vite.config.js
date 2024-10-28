@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import tsconfigPaths from "vite-tsconfig-paths";
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
     setEnv(mode);
@@ -13,7 +14,6 @@ export default defineConfig(({ mode }) => {
             envPlugin(),
             devServerPlugin(),
             sourcemapPlugin(),
-            buildPathPlugin(),
             basePlugin(),
             importPrefixPlugin(),
             htmlPlugin(mode),
@@ -87,6 +87,7 @@ function sourcemapPlugin() {
             ]);
             return {
                 build: {
+                    outDir: "build",
                     manifest: true,
                     sourcemap: GENERATE_SOURCEMAP === "true",
                     rollupOptions: {
@@ -101,23 +102,8 @@ function sourcemapPlugin() {
             };
         }
     };
-}// Migration guide: Follow the guide below
-// https://vitejs.dev/config/build-options.html#build-outdir
-function buildPathPlugin() {
-    return {
-        name: "build-path-plugin",
-        config(_, { mode }) {
-            const { BUILD_PATH } = loadEnv(mode, ".", [
-                "BUILD_PATH",
-            ]);
-            return {
-                build: {
-                    outDir: BUILD_PATH || "build",
-                },
-            };
-        },
-    };
 }
+
 // Migration guide: Follow the guide below and remove homepage field in package.json
 // https://vitejs.dev/config/shared-options.html#base
 function basePlugin() {
