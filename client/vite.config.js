@@ -87,13 +87,21 @@ function sourcemapPlugin() {
             ]);
             return {
                 build: {
+                    manifest: true,
                     sourcemap: GENERATE_SOURCEMAP === "true",
-                },
+                    rollupOptions: {
+                        output: {
+                            manualChunks: {
+                                react: ["react", "react-dom"],
+                                "react-router-dom": ["react-router-dom"],
+                            }
+                        }
+                    }
+                }
             };
-        },
+        }
     };
-}
-// Migration guide: Follow the guide below
+}// Migration guide: Follow the guide below
 // https://vitejs.dev/config/build-options.html#build-outdir
 function buildPathPlugin() {
     return {
