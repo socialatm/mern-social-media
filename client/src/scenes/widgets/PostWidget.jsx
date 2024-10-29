@@ -145,19 +145,30 @@ const PostWidget = ({
               <SendRoundedIcon />
             </IconButton>
           </FlexBetween>
-
-          {comments.map((comment, i) => (
-            <Box key={`${name}-${i}`}>
-              <Divider />
-              <Typography sx={{ color: main, m: "0.5rem 0", pl: "1rem", wordBreak:'break-word' }}>
-                <Typography color={medium}>{
-                users.find(user => user._id === comment.userId)?.firstName +" "+
-                users.find(user => user._id === comment.userId)?.lastName
-                }</Typography><Typography color={main}>{comment.commentText}</Typography>
-              </Typography>
-            </Box>
-          ))}
-          <Divider />
+            {comments.map((comment, i) => (
+              <Box key={`${name}-${i}`}>
+                <Divider />
+                <Typography sx={{ color: main, m: "0.5rem 0", pl: "1rem", wordBreak:'break-word' }}>
+                  <FlexBetween>
+                    <FlexBetween gap="1rem">
+                      <img
+                        style={{ objectFit: "cover", borderRadius: "50%" }}
+                        width="30px"
+                        height="30px"
+                        alt="user"
+                        src={`http://localhost:3001/assets/${users.find(user => user._id === comment.userId)?.picturePath}`}
+                      />
+                      <Typography color={medium}>
+                        {users.find(user => user._id === comment.userId)?.firstName + " " +
+                       users.find(user => user._id === comment.userId)?.lastName}
+                      </Typography>
+                    </FlexBetween>
+                  </FlexBetween>
+                  <Typography color={main}>{comment.commentText}</Typography>
+                </Typography>
+              </Box>
+            ))}
+            <Divider />
         </Box>
       )}
     </WidgetWrapper>
