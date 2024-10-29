@@ -30,6 +30,7 @@ function setEnv(mode) {
             : `/${homepage}`}`.replace(/\/$/, "")
         : "";
 }
+
 // Expose `process.env` environment variables to your client code
 // Migration guide: Follow the guide below to replace process.env with import.meta.env in your app, you may also need to rename your environment variable to a name that begins with VITE_ instead of REACT_APP_
 // https://vitejs.dev/guide/env-and-mode.html#env-variables
@@ -47,6 +48,7 @@ function envPlugin() {
         },
     };
 }
+
 // Setup HOST, SSL, PORT
 // Migration guide: Follow the guides below
 // https://vitejs.dev/config/server-options.html#server-host
@@ -76,6 +78,7 @@ function devServerPlugin() {
         },
     };
 }
+
 // Migration guide: Follow the guide below
 // https://vitejs.dev/config/build-options.html#build-sourcemap
 function sourcemapPlugin() {
@@ -112,11 +115,12 @@ function basePlugin() {
         config(_, { mode }) {
             const { PUBLIC_URL } = loadEnv(mode, ".", ["PUBLIC_URL"]);
             return {
-                base: PUBLIC_URL || "",
+                base: 'http://localhost:3000/',
             };
         },
     };
 }
+
 // To resolve modules from node_modules, you can prefix paths with ~
 // https://create-react-app.dev/docs/adding-a-sass-stylesheet
 // Migration guide: Follow the guide below
@@ -133,6 +137,7 @@ function importPrefixPlugin() {
         },
     };
 }
+
 // Replace %ENV_VARIABLES% in index.html
 // https://vitejs.dev/guide/api-plugin.html#transformindexhtml
 // Migration guide: Follow the guide below, you may need to rename your environment variable to a name that begins with VITE_ instead of REACT_APP_
