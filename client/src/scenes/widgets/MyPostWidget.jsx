@@ -37,6 +37,16 @@ const MyPostWidget = ({ picturePath }) => {
   const mediumMain = palette.neutral.mediumMain;
   const medium = palette.neutral.medium;
 
+  /**
+   * Handles the creation of a new post by the user.
+   *
+   * This function is responsible for creating a new post by the user. 
+   * It constructs a FormData object with the necessary information, including the user's ID, the post description, and an optional image. 
+   * It then sends a POST request to the server to create the new post, and updates the Redux store with the new post data.
+   *
+   * @returns {Promise<void>} A Promise that resolves when the post has been successfully created.
+   */
+  
   const handlePost = async () => {
     const formData = new FormData();
     formData.append("userId", _id);
@@ -55,6 +65,7 @@ const MyPostWidget = ({ picturePath }) => {
     dispatch(setPosts({ posts }));
     setImage(null);
     setPost("");
+    setIsImage(false);
   };
 
   return (
