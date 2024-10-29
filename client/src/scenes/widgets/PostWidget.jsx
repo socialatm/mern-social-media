@@ -164,7 +164,7 @@ const PostWidget = ({
                       </Typography>
                     </FlexBetween>
                   </FlexBetween>
-                  <Typography color={main}>{comment.commentText}</Typography>
+                  <Typography color={main} sx={{ marginLeft: "45px" }}>{comment.commentText}</Typography>
                 </Typography>
               </Box>
             ))}
