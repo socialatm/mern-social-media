@@ -14,7 +14,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPost } from "state";
 
-const PostWidget = ({
+const CommentWidget = ({
   postId,
   postUserId,
   name,
@@ -175,4 +175,4 @@ const PostWidget = ({
   );
 };
 
-export default PostWidget;
+export default CommentWidget;

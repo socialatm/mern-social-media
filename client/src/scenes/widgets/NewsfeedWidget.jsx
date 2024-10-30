@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts, setUsers } from "state";
-import PostWidget from "./PostWidget";
+import CommentWidget from "./CommentWidget";
 
 const NewsfeedWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
@@ -61,7 +61,7 @@ const NewsfeedWidget = ({ userId, isProfile = false }) => {
           likes,
           comments,
         }) => (
-          <PostWidget
+          <CommentWidget
             key={_id}
             postId={_id}
             postUserId={userId}
