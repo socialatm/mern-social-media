@@ -37,7 +37,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
     }
 
     const response = await fetch(
-      `http://localhost:3001/users/${_id}/${friendId}`,
+      `http://localhost:3001/users/${_id}/${key}`,
       {
         method: "PATCH",
         headers: {
