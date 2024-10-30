@@ -34,6 +34,14 @@ export const getUser = async (req, res) => {
   }
 };
 
+/**
+ * Retrieves the friends of a user.
+ *
+ * @param {Object} req - The HTTP request object.
+ * @param {string} req.params.id - The ID of the user whose friends should be retrieved.
+ * @param {Object} res - The HTTP response object.
+ * @returns {Promise<Object[]>} - An array of the user's friends, formatted with selected properties.
+ */
 export const getUserFriends = async (req, res) => {
   try {
     const { id } = req.params;
