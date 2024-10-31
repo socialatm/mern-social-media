@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "scenes/navbar";
 
 const SettingsPage = () => {
-    const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
   const { userId } = useParams();
   const token = useSelector((state) => state.token);
 
