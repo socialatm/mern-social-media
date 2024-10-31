@@ -54,11 +54,10 @@ const UserWidget = ({ userId, picturePath }) => {
       <FlexBetween
         gap="0.5rem"
         pb="1.1rem"
-        onClick={() => navigate(`/profile/${userId}`)}
       >
         <FlexBetween gap="1rem">
           <UserImage image={picturePath} />
-          <Box>
+          <Box onClick={() => navigate(`/profile/${userId}`)}>
             <Typography
               variant="h4"
               color={dark}
@@ -75,7 +74,14 @@ const UserWidget = ({ userId, picturePath }) => {
             <Typography color={medium}>{friends.length} friends</Typography>
           </Box>
         </FlexBetween>
-        <ManageAccountsOutlined />
+        <ManageAccountsOutlined 
+          onClick={() => navigate(`/settings/${userId}`)} sx={{
+            "&:hover": {
+              color: palette.primary.light,
+              cursor: "pointer",
+            },
+          }}
+        />
       </FlexBetween>
 
       <Divider />
