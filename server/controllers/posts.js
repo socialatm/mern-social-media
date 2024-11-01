@@ -92,6 +92,10 @@ export const commentPost = async (req, res)=>{
     const { id } = req.params
     const { userId, commentText } = req.body;
 
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(400).json({ message: "Invalid userId" });
+    }
+
     const user = await User.findById(userId).select("firstName lastName picturePath");
     if (!user) {
       return res.status(404).json({ message: "User not found" });
