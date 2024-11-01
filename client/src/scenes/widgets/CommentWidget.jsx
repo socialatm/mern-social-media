@@ -2,7 +2,6 @@ import {
   ChatBubbleOutlineOutlined,
   FavoriteBorderOutlined,
   FavoriteOutlined,
-  Search,
   ShareOutlined,
 } from "@mui/icons-material";
 import { Box, Divider, IconButton, InputBase, Typography, useTheme } from "@mui/material";
@@ -31,12 +30,10 @@ const CommentWidget = ({
   const token = useSelector((state) => state.token);
   const users = useSelector((state) => state.users)
   const loggedInUserId = useSelector((state) => state.user._id);
-
   
   const isLiked = Boolean(likes[loggedInUserId]);
   const likeCount = Object.keys(likes).length;
-  
-  
+    
   const { palette } = useTheme();
   const main = palette.neutral.main;
   const medium = palette.neutral.medium;
