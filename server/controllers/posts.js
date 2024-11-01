@@ -76,6 +76,16 @@ export const likePost = async (req, res) => {
   }
 };
 
+/**
+ * Handles the creation of a new comment on a post.
+ *
+ * @param {Object} req - The request object.
+ * @param {string} req.params.id - The ID of the post to comment on.
+ * @param {string} req.body.userId - The ID of the user creating the comment.
+ * @param {string} req.body.commentText - The text of the comment.
+ * @param {Object} res - The response object.
+ * @returns {Promise<Object>} - The updated post with the new comment.
+ */
 export const commentPost = async (req, res)=>{
   try {
 
