@@ -153,11 +153,10 @@ const CommentWidget = ({
                         width="30px"
                         height="30px"
                         alt="user"
-                        src={`http://localhost:3001/assets/${users.find(user => user._id === comment.userId)?.picturePath}`}
+                        src={`http://localhost:3001/assets/${comment.picturePath}`}
                       />
                       <Typography color={medium}>
-                        {users.find(user => user._id === comment.userId)?.firstName + " " +
-                       users.find(user => user._id === comment.userId)?.lastName}
+                        {comment.firstName + " " + comment.lastName}
                       </Typography>
                     </FlexBetween>
                   </FlexBetween>

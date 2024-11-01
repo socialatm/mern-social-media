@@ -78,10 +78,18 @@ export const likePost = async (req, res) => {
 
 export const commentPost = async (req, res)=>{
   try {
+
     const { id } = req.params
     const { userId, commentText } = req.body;
+
+    const user = await User.findById(userId).select("firstName lastName picturePath");
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    const { firstName, lastName, picturePath } = user;
+
     const post = await Post.findById(id);
-    post.comments.push({userId, commentText})
+    post.comments.push({userId, commentText, firstName, lastName, picturePath});
     
     const updatePost = await Post.findByIdAndUpdate(id, {comments:post.comments}, {new:true});
     res.status(200).json(updatePost);
