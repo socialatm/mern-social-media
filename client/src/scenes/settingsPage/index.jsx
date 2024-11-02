@@ -27,7 +27,7 @@ const SettingsPage = () => {
     return (
     <Box>
       <Navbar /> 
-      <Box>
+      <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
           <UserSettingsWidget userId={userId} picturePath={user.picturePath} />
           <Box m="2rem 0" />
       </Box>
