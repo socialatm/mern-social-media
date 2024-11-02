@@ -1,2 +1,3 @@
 
 .vscode/launch.json
+server/tests/__snapshots__/example.test.js.snap
