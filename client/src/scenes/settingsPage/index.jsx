@@ -1,4 +1,4 @@
-import { Box, useMediaQuery } from "@mui/material";
+import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -27,7 +27,7 @@ const SettingsPage = () => {
     return (
     <Box>
       <Navbar /> 
-      <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
+      <Box width="100%" padding="2rem 6%" gap="0.5rem" justifyContent="center">
           <UserSettingsWidget userId={userId} picturePath={user.picturePath} />
           <Box m="2rem 0" />
       </Box>
