@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Navbar from "scenes/navbar";
+import UserSettingsWidget from "scenes/widgets/UserSettingsWidget";
 
 const SettingsPage = () => {
   const [user, setUser] = useState(null);
@@ -26,7 +27,10 @@ const SettingsPage = () => {
     return (
     <Box>
       <Navbar /> 
-      <h1>User Settings page</h1>
+      <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
+          <UserSettingsWidget userId={userId} picturePath={user.picturePath} />
+          <Box m="2rem 0" />
+      </Box>
     </Box>
     );
 }
