@@ -265,7 +265,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [JQuery-url]: https://jquery.com 
 
 
-# FullStack Social Media App
+# Video
 
 Build a COMPLETE Fullstack Responsive MERN App with Auth, Likes, Dark Mode | Vite, React, MongoDB, MUI
 
