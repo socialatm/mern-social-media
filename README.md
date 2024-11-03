@@ -106,8 +106,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these steps.
 
 ### Prerequisites
 
@@ -229,6 +228,7 @@ Use this space to list resources you find helpful and would like to give credit 
 * [GitHub Pages](https://pages.github.com)
 * [Font Awesome](https://fontawesome.com)
 * [React Icons](https://react-icons.github.io/react-icons/search)
+* [ed-roh video tutorial](https://www.youtube.com/watch?v=K8YELRmUb5o)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -261,9 +261,3 @@ Use this space to list resources you find helpful and would like to give credit 
 [Laravel-url]: https://laravel.com
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
-
-# Video
-
-Build a COMPLETE Fullstack Responsive MERN App with Auth, Likes, Dark Mode | Vite, React, MongoDB, MUI
-
-Video: https://www.youtube.com/watch?v=K8YELRmUb5o
