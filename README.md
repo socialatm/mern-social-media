@@ -110,10 +110,14 @@ To get a local copy up and running follow these steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
+Things you need to use the software and how to install them.
+* [node 20.18.0](https://nodejs.org/en/download) or greater.
+* [mongoDB 6.0.1](https://www.mongodb.com/try/download/community) or greater.
+* [mongodb compass](https://www.mongodb.com/try/download/compass) is helpful for viewing the database.
+* [nodemon 3.1.7](https://www.npmjs.com/package/nodemon) or greater.
+  ```
+  npm install -g nodemon
+
   ```
 
 ### Installation
