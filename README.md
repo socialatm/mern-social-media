@@ -29,9 +29,9 @@
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
     ·
-    <a href="https://github.com/socialatm/mern-social-media/issues/new?labels=bug&template=/.github/ISSUE_TEMPLATE/bug_report.md">Report Bug</a>
+    <a href="https://github.com/socialatm/mern-social-media/issues/new?labels=bug">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement">Request Feature</a>
   </p>
 </div>
 
