@@ -20,7 +20,7 @@ export const themeSettings = (mode) => {
             },
             background: {
               default: "#0A0A0A",
-              alt: "#1A1A1A",
+              paper: "#1A1A1A",
             },
           }
         : {
@@ -39,7 +39,7 @@ export const themeSettings = (mode) => {
             },
             background: {
               default: "#F6F6F6",
-              alt: "#FFFFFF",
+              paper: "#FFFFFF",
             },
           }),
     },

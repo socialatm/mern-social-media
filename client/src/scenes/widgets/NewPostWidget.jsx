@@ -169,7 +169,7 @@ const NewPostWidget = ({ picturePath }) => {
           disabled={!post}
           onClick={handlePost}
           sx={{
-            color: palette.background.alt,
+            color: palette.background.paper,
             backgroundColor: palette.primary.main,
             borderRadius: "3rem",
           }}

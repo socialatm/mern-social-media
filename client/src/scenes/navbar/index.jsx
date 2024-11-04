@@ -37,12 +37,12 @@ const Navbar = () => {
   const dark = theme.palette.neutral.dark;
   const background = theme.palette.background.default;
   const primaryLight = theme.palette.primary.light;
-  const alt = theme.palette.background.alt;
+  const paper = theme.palette.background.paper;
 
   const fullName = `${user.firstName} ${user.lastName}`;
 
   return (
-    <FlexBetween padding="1rem 6%" backgroundColor={alt}>
+    <FlexBetween padding="1rem 6%" backgroundColor={paper}>
       <FlexBetween gap="1.75rem">
         <Typography
           fontWeight="bold"
