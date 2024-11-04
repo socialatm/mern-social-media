@@ -74,7 +74,7 @@ const UserSettingsWidget = ({ userId, picturePath }) => {
             <Typography color={medium}>{friends.length} friends</Typography>
           </Box>
         </FlexBetween>
-        <ManageAccountsOutlined 
+        <EditOutlined sx={{ color: main }} 
           onClick={() => navigate(`/settings/${userId}`)} sx={{
             "&:hover": {
               color: palette.primary.light,
