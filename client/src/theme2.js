@@ -34,16 +34,16 @@ export const themeSettings = (mode) => {
         ? {
             // palette values for dark mode
             primary: {
-              dark: colorTokens.primary[200],
-              main: colorTokens.primary[500],
-              light: colorTokens.primary[800],
+              dark: "#99EEFD",
+              main: "#00D5FA",
+              light: "#00353F",
             },
             neutral: {
-              dark: colorTokens.grey[100],
-              main: colorTokens.grey[200],
-              mediumMain: colorTokens.grey[300],
-              medium: colorTokens.grey[400],
-              light: colorTokens.grey[700],
+              dark: "#E0E0E0",
+              main: "#C2C2C2",
+              mediumMain: "#A3A3A3",
+              medium: "#858585",
+              light: "#333333",
             },
             background: {
               default: "#0A0A0A",
