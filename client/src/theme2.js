@@ -1,30 +1,3 @@
-// color design tokens export
-export const colorTokens = {
-  grey: {
-    50: "#F0F0F0",
-    100: "#E0E0E0",
-    200: "#C2C2C2",
-    300: "#A3A3A3",
-    400: "#858585",
-    500: "#666666",
-    600: "#4D4D4D",
-    700: "#333333",
-    1000: "#000000",
-  },
-  primary: {
-    50: "#E6FBFF",
-    100: "#CCF7FE",
-    200: "#99EEFD",
-    300: "#66E6FC",
-    400: "#33DDFB",
-    500: "#00D5FA",
-    600: "#00A0BC",
-    700: "#006B7D",
-    800: "#00353F",
-    900: "#001519",
-  },
-};
-
 // mui theme settings
 export const themeSettings = (mode) => {
   return {
@@ -53,16 +26,16 @@ export const themeSettings = (mode) => {
         : {
             // palette values for light mode
             primary: {
-              dark: colorTokens.primary[700],
-              main: colorTokens.primary[500],
-              light: colorTokens.primary[50],
+              dark: "#006B7D",
+              main: "#00D5FA",
+              light: "#E6FBFF",
             },
             neutral: {
-              dark: colorTokens.grey[700],
-              main: colorTokens.grey[500],
-              mediumMain: colorTokens.grey[400],
-              medium: colorTokens.grey[300],
-              light: colorTokens.grey[50],
+              dark: "#333333",
+              main: "#666666",
+              mediumMain: "#858585",
+              medium: "#A3A3A3",
+              light: "#F0F0F0",
             },
             background: {
               default: "#F6F6F6",
