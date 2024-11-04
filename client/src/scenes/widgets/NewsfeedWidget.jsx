@@ -3,6 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPosts, setUsers } from "state";
 import CommentWidget from "./CommentWidget";
 
+/**
+ * A React component that renders a newsfeed widget, displaying posts and allowing for user interaction.
+ *
+ * @param {object} props - The component props.
+ * @param {string} props.userId - The ID of the user whose posts should be displayed.
+ * @param {boolean} [props.isProfile=false] - Whether the newsfeed is being displayed on a user's profile page.
+ * @returns {JSX.Element} - The rendered newsfeed widget.
+ */
 const NewsfeedWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts);
