@@ -1,5 +1,4 @@
 import {
-  ManageAccountsOutlined,
   EditOutlined,
   LocationOnOutlined,
   WorkOutlineOutlined,
