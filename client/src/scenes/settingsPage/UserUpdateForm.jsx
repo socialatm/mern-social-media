@@ -26,11 +26,6 @@ const registerSchema = yup.object().shape({
   picture: yup.string().required("required"),
 });
 
-const loginSchema = yup.object().shape({
-  email: yup.string().email("invalid email").required("required"),
-  password: yup.string().required("required"),
-});
-
 const initialValuesRegister = {
   firstName: "",
   lastName: "",
@@ -41,20 +36,15 @@ const initialValuesRegister = {
   picture: "",
 };
 
-const initialValuesLogin = {
-  email: "",
-  password: "",
-};
-
 const Form = () => {
-  const [pageType, setPageType] = useState("login");
   const { palette } = useTheme();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isNonMobile = useMediaQuery("(min-width:600px)");
-  const isLogin = pageType === "login";
-  const isRegister = pageType === "register";
 
+  const pageType = "register";
+  const isRegister = pageType === "register";
+  
   const register = async (values, onSubmitProps) => {
     // this allows us to send form info with image
     const formData = new FormData();
@@ -98,15 +88,14 @@ const Form = () => {
   };
 
   const handleFormSubmit = async (values, onSubmitProps) => {
-    if (isLogin) await login(values, onSubmitProps);
     if (isRegister) await register(values, onSubmitProps);
   };
 
   return (
     <Formik
       onSubmit={handleFormSubmit}
-      initialValues={isLogin ? initialValuesLogin : initialValuesRegister}
-      validationSchema={isLogin ? loginSchema : registerSchema}
+      initialValues={initialValuesRegister}
+      validationSchema={registerSchema}
     >
       {({
         values,
@@ -245,7 +234,7 @@ const Form = () => {
                 "&:hover": { color: palette.primary.main },
               }}
             >
-              {isLogin ? "LOGIN" : "REGISTER"}
+              Update User Settings
             </Button>
             <Typography
               onClick={() => {
@@ -261,9 +250,7 @@ const Form = () => {
                 },
               }}
             >
-              {isLogin
-                ? "Don't have an account? Sign Up here."
-                : "Already have an account? Login here."}
+              Already have an account? Login here.
             </Typography>
           </Box>
         </form>
@@ -271,5 +258,4 @@ const Form = () => {
     </Formik>
   );
 };
-
 export default Form;
