@@ -236,22 +236,6 @@ const Form = () => {
             >
               Update User Settings
             </Button>
-            <Typography
-              onClick={() => {
-                setPageType(isLogin ? "register" : "login");
-                resetForm();
-              }}
-              sx={{
-                textDecoration: "underline",
-                color: palette.primary.main,
-                "&:hover": {
-                  cursor: "pointer",
-                  color: palette.primary.light,
-                },
-              }}
-            >
-              Already have an account? Login here.
-            </Typography>
           </Box>
         </form>
       )}
