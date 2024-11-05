@@ -73,16 +73,19 @@ const UserSettingsWidget = ({ userId, picturePath }) => {
             <Typography color={medium}>{friends.length} friends</Typography>
           </Box>
         </FlexBetween>
-        <EditOutlined sx={{ color: main }} 
+        <EditOutlined 
           onClick={() => navigate(`/settings/${userId}`)} sx={{
             "&:hover": {
-              color: palette.primary.light,
+              color: main,
               cursor: "pointer",
             },
           }}
         />
       </FlexBetween>
 
+      <Divider />
+      {/* New Form Row */}
+      
       <Divider />
 
       {/* SECOND ROW */}
