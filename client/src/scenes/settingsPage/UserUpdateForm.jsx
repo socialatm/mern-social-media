@@ -42,9 +42,6 @@ const Form = () => {
   const navigate = useNavigate();
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
-  const pageType = "register";
-  const isRegister = pageType === "register";
-  
   const register = async (values, onSubmitProps) => {
     // this allows us to send form info with image
     const formData = new FormData();
@@ -88,7 +85,7 @@ const Form = () => {
   };
 
   const handleFormSubmit = async (values, onSubmitProps) => {
-    if (isRegister) await register(values, onSubmitProps);
+    await register(values, onSubmitProps);
   };
 
   return (
