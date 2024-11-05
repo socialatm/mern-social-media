@@ -116,7 +116,7 @@ const Form = () => {
               "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
             }}
           >
-            {isRegister && (
+            
               <>
                 <TextField
                   label="First Name"
@@ -196,7 +196,7 @@ const Form = () => {
                   </Dropzone>
                 </Box>
               </>
-            )}
+            
           </Box>
 
           {/* BUTTONS */}
