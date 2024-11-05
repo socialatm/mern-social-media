@@ -86,8 +86,9 @@ const UserSettingsWidget = ({ userId, picturePath }) => {
 
       <Divider />
       {/* New Form Row */}
-      <UserUpdateForm user={user} />
-      
+      <Box p="1rem 0">
+        <UserUpdateForm user={user} />
+      </Box>
       <Divider />
 
       {/* SECOND ROW */}
