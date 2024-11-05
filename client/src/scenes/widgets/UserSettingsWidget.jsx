@@ -10,6 +10,7 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import UserUpdateForm from "scenes/settingsPage/UserUpdateForm";
 
 const UserSettingsWidget = ({ userId, picturePath }) => {
   const [user, setUser] = useState(null);
@@ -85,6 +86,7 @@ const UserSettingsWidget = ({ userId, picturePath }) => {
 
       <Divider />
       {/* New Form Row */}
+      <UserUpdateForm user={user} />
       
       <Divider />
 

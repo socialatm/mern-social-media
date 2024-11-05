@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Navbar from "scenes/navbar";
 import UserSettingsWidget from "scenes/widgets/UserSettingsWidget";
-import UserUpdateForm from "scenes/settingsPage/UserUpdateForm";
 
 const SettingsPage = () => {
   const [user, setUser] = useState(null);
@@ -31,7 +30,6 @@ const SettingsPage = () => {
       <Box width="100%" padding="2rem 6%" gap="0.5rem" justifyContent="center">
           <UserSettingsWidget userId={userId} picturePath={user.picturePath} />
           <Box m="2rem 0" />
-          <UserUpdateForm user={user} />
       </Box>
     </Box>
     );
